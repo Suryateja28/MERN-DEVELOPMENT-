@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number1" id="number" />
+
+    <input type="number" id="square" />
+
+    <input type="number" id="cube" />
+
+    <input type="number" id="qutra" />
+
+    <script>
+        document.getElementById('number').oninput = function()
+        {
+            const num = document.getElementById('number').value;
+            document.getElementById('square').value = num * num;
+            document.getElementById('cube').value = num * num * num;
+            document.getElementById('qutra').value = num * num * num * num;
+        }
+        document.getElementById('square').oninput = function()
+        {
+            const square = document.getElementById('square').value;
+            const num = Math.sqrt(square);
+            document.getElementById('number').value = num;
+            document.getElementById('cube').value = num * num * num;
+            document.getElementById('qutra').value = num * num * num * num;
+        }
+        document.getElementById('cube').oninput = function()
+        {
+            const cube = document.getElementById('cube').value;
+            const num = Math.cbrt(cube);
+            document.getElementById('number').value = num;
+            document.getElementById('square').value = num * num;
+            document.getElementById('qutra').value = num * num * num * num;
+        }
+        document.getElementById('qutra').oninput = function()
+        {
+            const qutra = document.getElementById('qutra').value;
+            const num = Math.pow(qutra, 0.25);
+            document.getElementById('number').value = num;
+            document.getElementById('square').value = num * num;
+            document.getElementById('cube').value = num * num * num;
+        }
+    </script>
+</body>
+</html>

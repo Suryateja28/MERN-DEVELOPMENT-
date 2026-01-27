@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+</head>
+<body>
+
+<h2>Simple Quiz</h2>
+
+<form id="quizform">
+
+    <p>1. Capital of India?</p>
+    <input type="radio" name="q1" value="Delhi"> Delhi<br>
+    <input type="radio" name="q1" value="Mumbai"> Mumbai<br>
+
+    <p>2. Which language runs in browser?</p>
+    <input type="radio" name="q2" value="javascript"> JavaScript<br>
+    <input type="radio" name="q2" value="python"> Python<br>
+
+    <p>3. HTML stands for?</p>
+    <input type="radio" name="q3" value="HyperText Markup Language"> HyperText Markup Language<br>
+    <input type="radio" name="q3" value="HighText Machine Language"> HighText Machine Language<br>
+
+    <p>4. CSS is used for?</p>
+    <input type="radio" name="q4" value="styling"> Styling<br>
+    <input type="radio" name="q4" value="logic"> Logic<br>
+
+    <p>5. JavaScript is a ___ language?</p>
+    <input type="radio" name="q5" value="programming"> Programming<br>
+    <input type="radio" name="q5" value="markup"> Markup<br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<h3 id="result"></h3>
+
+<script>
+    const correctAns = {
+        q1: 'Delhi',
+        q2: 'javascript',
+        q3: 'HyperText Markup Language',
+        q4: 'styling',
+        q5: 'programming'
+    };
+
+    const quizform = document.getElementById('quizform');
+    const result = document.getElementById('result');
+
+    quizform.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        let score = 0;
+        let count = 5;
+
+        for (let key in correctAns) {
+            const selected = document.querySelector(`input[name="${key}"]:checked`);
+
+            if (selected && selected.value === correctAns[key]) {
+                score++;
+            }
+        }
+
+        result.textContent = `Your score is ${score} out of ${count}`;
+        result.style.color = 'green';
+    });
+</script>
+
+</body>
+</html>

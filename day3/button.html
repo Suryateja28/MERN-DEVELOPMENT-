@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="button1">Click me:</label>
+    <button id="button1">BJP</button>
+
+     <label for="button2">Click me:</label>
+    <button id="button2">CONGRESS</button>
+
+     <label for="button3">Click me:</label>
+    <button id="button3">TRS</button>
+
+    <table class="votes-table">
+        <tr>
+            <th>Party</th>
+            <th>Votes</th>
+        </tr>
+        <tr>
+            <td>BJP</td>
+            <td id="bjp-votes">0</td>
+        </tr>
+        <tr>
+            <td>CONGRESS</td>
+            <td id="congress-votes">0</td>
+        </tr>
+        <tr>
+            <td>TRS</td>
+            <td id="trs-votes">0</td>
+        </tr>
+    </table>
+
+    <style>
+        button {
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+
+        #button1:hover {
+            background-color: orange;
+        }
+        #button2:hover {
+            background-color: green;
+        }
+        #button3:hover {
+            background-color: pink;
+        }
+        #button1{
+            color: black;
+
+        }
+        #button2{
+            color: black;
+        }
+        #button3{
+            color: black;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+        table {
+            margin-top: 20px;
+        }
+    </style>
+    
+    <script>
+        const count ={
+            bjp: 0,
+            congress: 0,
+            trs: 0
+        }
+        document.getElementById("button1").onclick = function() {
+            count.bjp += 1;
+            document.getElementById("bjp-votes").innerText = count.bjp;
+        };
+        document.getElementById("button2").onclick = function() {
+            count.congress += 1;
+            document.getElementById("congress-votes").innerText = count.congress;
+        };
+        document.getElementById("button3").onclick = function() {
+            count.trs += 1;
+            document.getElementById("trs-votes").innerText = count.trs;
+        };
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+                                                WINDOW  
+
+                                                DOCUMENT
+
+                                                HTML
+
+                                        HEAD                BODY
+
+                                META        TITLE          DIV -> ATTRIBUTE
+
+                        ATTRIBUTE   TEXT-NODE            H1       P-> TEXT-NODE
+
+                                                                        ATTRIBUTE
+                                                                        TEXT-NODE
+
+
+

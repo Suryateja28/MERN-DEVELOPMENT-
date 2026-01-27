@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="link.css">
+<body>
+    <div class="div-all">
+        <div class="div-height">
+            <label for="height">Height:</label>
+            <input type="number" id="height">
+        </div>
+        <div class="div-weight">
+            <label for="weight">Weight:</label>
+            <input type="number" id="weight">
+        </div>
+        <div class="div-button" id="div-button">
+            <button id="calculate">Calculate BMI</button>
+        </div>
+
+        <table class="table" id="bmi-table">
+            <thead class="table-head">
+                <tr class="table-row">
+                    <th>Height</th>
+                    <th>Weight</th>
+                    <th>BMI</th>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+                <tr>
+                    <td id="table-height"></td>
+                    <td id="table-weight"></td>
+                    <td id="table-bmi"></td>
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

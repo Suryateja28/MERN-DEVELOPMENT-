@@ -1,0 +1,38 @@
+.div-all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.div{
+    width: 400px;
+    height: 400px;
+    background-color: lightblue;
+}
+.table{
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+.table-header{
+    background-color: lightgray;
+}
+.table-body{
+    background-color: white;
+}
+.table, .table-header, .table-body, .table-row, .table-cell{
+    border: 1px solid black;
+}
+.table-cell{
+    text-align: center;
+    padding: 10px;
+}
+.table-row:hover{
+    background-color: lightyellow;
+}
+.table-header .table-cell{
+    font-weight: bold;
+}
+.table th,tr,td{
+    width: 33.33%;
+}

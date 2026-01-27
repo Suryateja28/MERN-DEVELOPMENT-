@@ -1,0 +1,103 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    color: white;
+    background-color: black;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    width: 100%;
+    z-index: 1;
+}
+.container h2 {
+    margin: 0;
+    padding: 10px 0;
+}   
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+}
+nav ul li a:hover {
+    background-color: grey;
+    border-radius: 5px;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+nav {
+    background-color: black;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+nav ul {
+    align-items: center;
+}
+nav ul li {
+    margin: 0 10px;
+}
+nav ul li a {
+    transition: background-color 0.3s, color 0.3s;
+}
+nav ul li a:hover {
+    background-color: grey;
+    color: white;
+}
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .container h2 {
+    font-size: 24px;
+}
+nav .container ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav .container ul li {
+    margin: 0 15px;
+}
+nav .container ul li a {
+    font-size: 18px;
+}
+nav .container ul li a:hover {
+    background-color: grey;
+    color: white;
+}
+section {
+    padding: 60px 20px;
+}
+section:nth-of-type(odd) {
+    background-color: #f4f4f4;
+}
+section:nth-of-type(even) {
+    background-color: #e2e2e2;
+}
+section h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+section p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+footer p {
+    margin: 0;
+}
