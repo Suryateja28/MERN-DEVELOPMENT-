@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('start');
+
+        setTimeout(() => {
+            console.log(' first setTimeout');
+        }, 100);
+
+        setTimeout(() => {
+            console.log(' second setTimeout');
+        }, 0);
+
+        const promise = new Promise((resolve, reject) => {
+            const flag = false;
+            if (flag) {
+                resolve('promise resolved');
+            } else {
+                reject('promise rejected');
+            };
+        });
+        console.log('end');
+
+
+        // start and end in micro task queue
+        // timeout in macro task queue
+        // promises in micro task queue have higher priority than macro task queue
+
+
+    </script>
+</body>
+</html>

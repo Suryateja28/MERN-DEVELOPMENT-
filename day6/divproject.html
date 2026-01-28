@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1" style="width: 200px; height: 100px; background-color: lightgray; text-align: center; line-height: 100px; cursor: pointer; border-radius: 10px; border-color: black;">
+        Click Me
+    </div>
+
+    <div id="div2" style="width: 200px; height: 100px; background-color: lightblue; text-align: center; line-height: 100px; border-radius: 10px; border-color: black; margin-top: 20px;">
+        Div 2
+    </div>
+    
+    <script>
+        const div1 = document.getElementById('div1');
+
+        const div2 = document.getElementById('div2');
+
+        div1.onclick = function() {
+            setTimeout(() => {
+                div2.style.backgroundColor = 'green';
+                div2.style.color = 'white';
+                div2.innerText = 'Clicked Div 1';
+            }, 3000);
+        };
+    </script>
+</body>
+</html>

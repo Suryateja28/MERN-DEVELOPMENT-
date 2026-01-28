@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+
+    <style>
+        table, th, td {
+            border: 1px solid white;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+
+        .loading {
+            color: blue;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body >
+    <h1>User List</h1>
+
+    <div id="status" class="loading">Loading users...</div>
+
+    <table id="usersTable">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </table>
+
+    <script>
+        const table = document.getElementById('usersTable');
+        const statusDiv = document.getElementById('status');
+
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error('Failed to fetch users');
+                }
+                return res.json();
+            })
+            .then(users => {
+                statusDiv.remove();
+                displayUsers(users);
+            })
+            .catch(err => {
+                statusDiv.innerText = 'Error loading users';
+                console.error(err);
+            });
+
+        function displayUsers(users) {
+            users.forEach(user => {
+                const row = document.createElement('tr');
+
+                const nameCell = document.createElement('td');
+                nameCell.innerText = user.name;
+
+                const emailCell = document.createElement('td');
+                emailCell.innerText = user.email;
+
+                row.appendChild(nameCell);
+                row.appendChild(emailCell);
+                table.appendChild(row);
+            });
+        }
+    </script>
+</body>
+</html>
