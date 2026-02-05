@@ -1,0 +1,73 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Random Number Game</title>
+
+    <style>
+      #div1, #div2, #div3, #div4 {
+        display: none;
+      }
+      hiddenNumber1, hiddenNumber2, hiddenNumber3, hiddenNumber4 {
+        display: none;
+      }
+      #display {
+        margin-top: 20px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <input type="number" id="number" placeholder="Enter a number between 1 and 10">
+
+    <div id="div1"><input type="number" id="hiddenNumber1"></div>
+    <div id="div2"><input type="number" id="hiddenNumber2"></div>
+    <div id="div3"><input type="number" id="hiddenNumber3"></div>
+    <div id="div4"><input type="number" id="hiddenNumber4"></div>
+
+    <div id="display"></div>
+
+    <script>
+      const hiddenNumbers = [
+        document.getElementById('hiddenNumber1'),
+        document.getElementById('hiddenNumber2'),
+        document.getElementById('hiddenNumber3'),
+        document.getElementById('hiddenNumber4')
+      ];
+
+      function generateRandomNumber() {
+        return Math.floor(Math.random() * 10) + 1;
+      }
+
+      // Generate random numbers once
+      hiddenNumbers.forEach(input => {
+        input.value = generateRandomNumber();
+      });
+
+      document.getElementById('number').addEventListener('input', function () {
+        const userInput = Number(this.value);
+        let win = false;
+
+        hiddenNumbers.forEach(input => {
+          if (userInput === Number(input.value)) {
+            win = true;
+          }
+        });
+
+        document.getElementById('display').innerText =
+          win ? "🎉 You Win!" : "❌ Try Again!";
+        
+
+        document.getElementById('div1').style.display = 'block';
+        document.getElementById('div2').style.display = 'block';    
+        document.getElementById('div3').style.display = 'block';
+        document.getElementById('div4').style.display = 'block';
+        
+      });
+    </script>
+
+  </body>
+  </html>

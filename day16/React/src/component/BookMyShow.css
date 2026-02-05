@@ -1,0 +1,228 @@
+:root {
+    --bms-red: #f84464;
+    --bms-dark: #333545;
+    --bms-light: #f5f5f5;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+}
+
+.dashboard-container {
+    min-height: 100vh;
+    background: #1a1c24;
+    color: white;
+    padding: 20px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: var(--bms-dark);
+    margin: -20px -20px 30px -20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--bms-red);
+    text-transform: uppercase;
+}
+
+.user-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.location-selector {
+    padding: 8px 16px;
+    background: #444;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.logout-btn {
+    padding: 8px 16px;
+    background: transparent;
+    border: 1px solid var(--bms-red);
+    color: var(--bms-red);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: var(--bms-red);
+    color: white;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 20px 40px;
+}
+
+.movie-card {
+    background: #2b2d3d;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-poster {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.movie-info {
+    padding: 15px;
+}
+
+.movie-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.movie-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #ffc107;
+    font-size: 0.9rem;
+}
+
+.city-badge {
+    background: var(--bms-red);
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-left: 10px;
+}
+
+/* Seat Booking Styles */
+.booking-container {
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.screen {
+    background: #fff;
+    height: 10px;
+    width: 100%;
+    margin: 30px 0;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+}
+
+.seats-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.seat {
+    height: 30px;
+    width: 30px;
+    background: #444451;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.seat.selected {
+    background: var(--bms-red);
+}
+
+.seat.occupied {
+    background: #fff;
+    cursor: not-allowed;
+}
+
+.seat:not(.occupied):hover {
+    transform: scale(1.2);
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.booking-summary {
+    background: var(--bms-dark);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.book-btn {
+    background: var(--bms-red);
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.book-btn:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+.book-btn:not(:disabled):hover {
+    box-shadow: 0 5px 15px rgba(248, 68, 100, 0.4);
+    transform: translateY(-2px);
+}

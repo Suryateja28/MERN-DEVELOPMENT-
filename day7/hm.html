@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Website</title>
+
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial;
+        }
+
+        /* Header */
+        header {
+            background: #333;
+            color: rgb(220, 19, 19);
+            display: flex;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .logo {
+            font-size: 26px;
+            margin-right: 10px;
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+            min-height: 80vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 200px;
+            background: #444;
+            padding: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: rgb(52, 16, 16);
+            text-decoration: none;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .sidebar a:hover {
+            color: yellow;
+        }
+
+        /* Content */
+        main {
+            flex: 1;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">🌐</div>
+        <h1>My Website</h1>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="container">
+
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <a href="#" onclick="loadPage('home')">Home</a>
+            <a href="#" onclick="loadPage('about')">About</a>
+            <a href="#" onclick="loadPage('contact')">Contact</a>
+        </nav>
+
+        <!-- Content -->
+        <main id="content">
+            <h2>Home Page</h2>
+            <p>Welcome to my website.</p>
+        </main>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 My Website</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+
+        function loadPage(page) {
+
+            let content = document.getElementById("content");
+
+            if (page === "home") {
+                content.innerHTML = `
+                    <h2>Home Page</h2>
+                    <p>Welcome to our website.</p>
+                    <p>This is the home section.</p>
+                `;
+            }
+
+            else if (page === "about") {
+                content.innerHTML = `
+                    <h2>About Us</h2>
+                    <p>We are learning Web Development.</p>
+                    <p>This website is made using HTML, CSS and JS.</p>
+                `;
+            }
+
+            else if (page === "contact") {
+                content.innerHTML = `
+                    <h2>Contact Us</h2>
+                    <p>Email: example@gmail.com</p>
+                    <p>Phone: 9876543210</p>
+                `;
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
